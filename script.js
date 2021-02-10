@@ -144,6 +144,11 @@ const possibleEmojis = [
     console.log('WebRTC channel state is:', dataChannel.readyState);
     if (dataChannel.readyState === 'open') {
       insertMessageToDOM({content: 'User joined! You can now chat.'});
+      var audio = document.getElementById("myAudio")
+      function playAudio() {
+        audio.play();
+      }
+      playAudio();
     }
   }
   
