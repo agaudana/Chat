@@ -1,5 +1,4 @@
-  
-const possibleEmojis = [
+  const possibleEmojis = [
     '🐀','🐁','🐭','🐹','🐂','🐃','🐄','🐮','🐅','🐆','🐯','🐇','🐐','🐑','🐏','🐴',
     '🐎','🐱','🐈','🐰','🐓','🐔','🐤','🐣','🐥','🐦','🐧','🐘','🐩','🐕','🐷','🐖',
     '🐗','🐫','🐪','🐶','🐺','🐻','🐨','🐼','🐵','🙈','🙉','🙊','🐒','🐉','🐲','🐊',
@@ -144,10 +143,6 @@ const possibleEmojis = [
     console.log('WebRTC channel state is:', dataChannel.readyState);
     if (dataChannel.readyState === 'open') {
       insertMessageToDOM({content: 'User joined! You can now chat.'});
-      var audio = document.getElementById("myAudio")
-      function playAudio() {
-        audio.play();
-      }
       playAudio();
     }
   }
@@ -165,6 +160,8 @@ const possibleEmojis = [
       messageEl.classList.add('message--mine');
     } else {
       messageEl.classList.add('message--theirs');
+      var audio = new Audio("https://raw.githubusercontent.com/agaudana/Chat/master/ding_ling.ogg")
+      audio.play()
     }
   
     const messagesEl = document.querySelector('.messages');
